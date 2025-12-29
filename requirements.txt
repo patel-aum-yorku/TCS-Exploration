@@ -1,0 +1,24 @@
+# --- Core Agent Framework ---
+strands-agents          # The AWS library for model-driven agents
+strands-agents-tools    # Collection of pre-built tools for agents
+fastmcp                 # To build your custom tools simply
+
+# --- AWS SDK ---
+boto3                   # To talk to Bedrock and OpenSearch
+opensearch-py           # The client to insert vectors into OpenSearch
+requests-aws4auth       # Handles the strict signing for OpenSearch Serverless
+
+# --- PDF Parsing & Chunking ---
+langchain-aws          # AWS specific utilities for LangChain
+langchain               # Orchestration utilities
+langchain-community     # Contains the PDF loaders
+pypdf                   # The actual PDF parsing engine
+langchain-text-splitters  # Text splitters for chunking documents
+# --- Web & API ---
+fastapi                 # Backend API
+uvicorn                 # Server runner
+streamlit               # Frontend UI
+python-dotenv           # To load your .env keys
+
+faiss-cpu              # Vector database for embeddings
+pdfplumber              # Alternative PDF parsing engine
