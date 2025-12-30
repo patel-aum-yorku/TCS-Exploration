@@ -7,6 +7,8 @@ import sys
 from pathlib import Path
 import subprocess
 import time
+from datetime import datetime
+import io
 
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -32,6 +34,8 @@ if "index_ready" not in st.session_state:
     st.session_state.index_ready = os.path.exists(INDEX_FOLDER)
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
+if "agent_logs" not in st.session_state:
+    st.session_state.agent_logs = {}
 
 def save_uploaded_file(uploaded_file):
     """Save uploaded PDF to Docs folder"""
@@ -66,6 +70,145 @@ def initialize_agents():
     except Exception as e:
         st.error(f"Error initializing agents: {str(e)}")
         return False
+
+def capture_agent_execution(prompt):
+    """
+    Capture agent execution details for display in UI
+    """
+    from contextlib import redirect_stdout, redirect_stderr
+    
+    # Capture stdout/stderr to get debug info
+    stdout_buffer = io.StringIO()
+    stderr_buffer = io.StringIO()
+    
+    execution_log = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "query": prompt,
+        "agents_called": [],
+        "tools_used": [],
+        "documents_retrieved": [],
+        "calculations_performed": [],
+        "execution_time": 0,
+        "raw_output": "",
+        "detailed_steps": []
+    }
+    
+    start_time = time.time()
+    
+    try:
+        # Capture the agent execution output
+        with redirect_stdout(stdout_buffer), redirect_stderr(stderr_buffer):
+            response = st.session_state.manager_agent(prompt)
+        
+        execution_log["execution_time"] = round(time.time() - start_time, 2)
+        execution_log["raw_output"] = stdout_buffer.getvalue()
+        
+        # Parse the output to extract detailed agent information
+        raw_output = stdout_buffer.getvalue()
+        
+        # Parse for RAG agent activity
+        if "🔍 RAG Query:" in raw_output:
+            execution_log["agents_called"].append("RAG Agent")
+            execution_log["tools_used"].append("retrieve_financial_documents")
+            execution_log["detailed_steps"].append("🔍 RAG Agent queried for document retrieval")
+            
+            # Extract the actual query
+            import re
+            query_match = re.search(r'🔍 RAG Query: (.+)', raw_output)
+            if query_match:
+                execution_log["detailed_steps"].append(f"   → Query: '{query_match.group(1)}'")
+        
+        # Parse for document retrieval details
+        if "📄 Retrieved" in raw_output and "documents" in raw_output:
+            doc_matches = re.findall(r'📄 Retrieved (\d+) documents', raw_output)
+            if doc_matches:
+                count = doc_matches[0]
+                execution_log["documents_retrieved"].append(f"{count} documents found")
+                execution_log["detailed_steps"].append(f"📄 Retrieved {count} relevant documents from FAISS index")
+                
+                # Extract document details
+                doc_detail_matches = re.findall(r'Document \d+: (.+?) \(Page (.+?)\)', raw_output)
+                for doc, page in doc_detail_matches[:3]:  # Show first 3 documents
+                    execution_log["detailed_steps"].append(f"   → {doc} (Page {page})")
+        
+        # Parse for MCP agent activity
+        if "Tool #1: calculate_ratio" in raw_output or "MCP_Agent" in raw_output:
+            execution_log["agents_called"].append("MCP Agent")
+            execution_log["tools_used"].append("Financial calculations")
+            execution_log["detailed_steps"].append("🧮 MCP Agent called for financial calculations")
+            
+            # Extract calculation details
+            if "calculate_ratio" in raw_output:
+                execution_log["calculations_performed"].append("Current ratio calculation")
+                execution_log["detailed_steps"].append("   → Tool: calculate_ratio")
+            if "compare_periods" in raw_output:
+                execution_log["calculations_performed"].append("Period comparison")
+                execution_log["detailed_steps"].append("   → Tool: compare_periods")
+        
+        # Parse for Manager agent decisions
+        if "Tool #1: query_rag_agent" in raw_output:
+            execution_log["detailed_steps"].insert(0, "🎯 Manager Agent routing query to RAG Agent")
+        if "Tool #2: query_mcp_agent" in raw_output or "Tool #1: query_mcp_agent" in raw_output:
+            execution_log["detailed_steps"].insert(0, "🎯 Manager Agent routing query to MCP Agent")
+        
+        return response, execution_log
+        
+    except Exception as e:
+        execution_log["execution_time"] = round(time.time() - start_time, 2)
+        execution_log["error"] = str(e)
+        execution_log["detailed_steps"].append(f"❌ Error occurred: {str(e)}")
+        return f"Error: {str(e)}", execution_log
+
+def display_execution_details(execution_log):
+    """Display agent execution details in an expandable section"""
+    with st.expander("🤔 **Thinking Process & Agent Activity**", expanded=False):
+        
+        # Execution flow section
+        if execution_log['detailed_steps']:
+            st.markdown("**🔄 Execution Flow:**")
+            for step in execution_log['detailed_steps']:
+                st.markdown(f"{step}")
+            st.markdown("---")
+        
+        # Summary statistics in columns
+        col1, col2, col3 = st.columns([1, 1, 1])
+        
+        with col1:
+            st.markdown("**⏱️ Performance**")
+            st.metric("Execution Time", f"{execution_log['execution_time']}s")
+            st.markdown(f"🕐 **Started:** {execution_log['timestamp']}")
+        
+        with col2:
+            st.markdown("**🤖 Agents & Tools**")
+            if execution_log['agents_called']:
+                for agent in execution_log['agents_called']:
+                    st.markdown(f"✅ {agent}")
+            else:
+                st.markdown("ℹ️ No agents detected")
+                
+            if execution_log['tools_used']:
+                st.markdown("**Tools Used:**")
+                for tool in execution_log['tools_used']:
+                    st.markdown(f"  🛠️ {tool}")
+        
+        with col3:
+            st.markdown("**📊 Results**")
+            if execution_log['documents_retrieved']:
+                for doc in execution_log['documents_retrieved']:
+                    st.markdown(f"📄 {doc}")
+            
+            if execution_log['calculations_performed']:
+                for calc in execution_log['calculations_performed']:
+                    st.markdown(f"🧮 {calc}")
+        
+        # Raw execution log (collapsed by default)
+        if execution_log.get('raw_output'):
+            with st.expander("🔍 **Detailed Debug Log**", expanded=False):
+                st.code(execution_log['raw_output'], language="text")
+        
+        # Error details if any
+        if execution_log.get('error'):
+            st.error(f"**Error:** {execution_log['error']}")
 
 # --- UI LAYOUT ---
 
@@ -122,9 +265,32 @@ with st.sidebar:
     
     st.divider()
     
+    # Export options
+    st.header("📥 Export Options")
+    
+    if st.session_state.chat_history:
+        # Prepare full conversation for export
+        full_conversation = ""
+        for message in st.session_state.chat_history:
+            role = "**User:**" if message["role"] == "user" else "**AI Assistant:**"
+            full_conversation += f"{role}\n{message['content']}\n\n"
+        
+        # Download as markdown
+        st.download_button(
+            label="📄 Download as Markdown",
+            data=full_conversation,
+            file_name=f"financial_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md",
+            mime="text/markdown"
+        )
+    else:
+        st.info("No conversation to export yet.")
+    
+    st.divider()
+    
     # Clear chat
     if st.button("🗑️ Clear Chat History"):
         st.session_state.chat_history = []
+        st.session_state.agent_logs = {}
         st.rerun()
     
     # Info section
@@ -141,18 +307,22 @@ with st.sidebar:
         - Financial ratio calculations
         - Period-over-period comparisons
         - Hybrid retrieval (tables + text)
+        
+        **Features:**
+        - Real-time agent execution tracking
+        - Detailed thinking process display
+        - Performance metrics
+        - Debug logging
         """)
 
-# Main chat interface
-st.header("💬 Chat Interface")
-
 # Display chat history
-for message in st.session_state.chat_history:
+for i, message in enumerate(st.session_state.chat_history):
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-        if "metadata" in message:
-            with st.expander("🔍 View Details"):
-                st.json(message["metadata"])
+        
+        # Show execution details for assistant messages
+        if message["role"] == "assistant" and i in st.session_state.agent_logs:
+            display_execution_details(st.session_state.agent_logs[i])
 
 # Chat input
 if prompt := st.chat_input("Ask a question about the financial documents..."):
@@ -175,14 +345,23 @@ if prompt := st.chat_input("Ask a question about the financial documents..."):
     with st.chat_message("user"):
         st.markdown(prompt)
     
-    # Get response from manager agent
+    # Get response from manager agent with execution tracking
     with st.chat_message("assistant"):
         with st.spinner("🤔 Analyzing..."):
             try:
-                # Call the agent directly (not .execute())
-                response = st.session_state.manager_agent(prompt)
+                # Capture agent execution details
+                response, execution_log = capture_agent_execution(prompt)
                 
-                # Display answer
+                # Store execution log
+                message_index = len(st.session_state.chat_history)
+                st.session_state.agent_logs[message_index] = execution_log
+                
+                # Display execution details first (as thinking process)
+                display_execution_details(execution_log)
+                
+                # Then display the main response
+                st.markdown("---")
+                st.markdown("### 📋 **Final Analysis**")
                 st.markdown(str(response))
                 
                 # Add assistant response to history
@@ -218,3 +397,4 @@ with st.expander("💡 Example Queries"):
 
 # Footer
 st.divider()
+st.markdown("*Built with AWS Strands Agents, FastMCP, and Amazon Bedrock*")
