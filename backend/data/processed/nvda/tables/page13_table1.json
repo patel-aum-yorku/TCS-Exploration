@@ -1,0 +1,54 @@
+{
+  "id": "page13_table1",
+  "page": 13,
+  "title": "Information About Our Executive Officers",
+  "caption": "Jen-Hsun Huang  co-founded NVIDIA in 1993 and has served as our President, Chief Executive Officer, and a member of the Board of Directors since our inception. From 1985 to 1993, Mr. Huang was employed at LSI Logic Corporation, a computer chip manufacturer, where he held a variety of positions including as Director of Coreware, the business unit responsible for LSI's SOC. From 1983 to 1985, Mr. Huang was a microprocessor designer for AMD, a semiconductor company. Mr. Huang holds a B.S.E.E. degree from Oregon State University and an M.S.E.E. degree from Stanford University. Colette M. Kress   joined NVIDIA in 2013 as Executive Vice President and Chief Financial Officer. Prior to NVIDIA, Ms. Kress most recently served as Senior Vice President and Chief Financial Officer of the Business Technology and Operations Finance organization at Cisco Systems, Inc., a networking equipment company, since 2010. At Cisco, Ms. Kress was responsible for financial strategy, planning, reporting and business development for all business segments, engineering and operations. From 1997 to 2010 Ms. Kress held a variety of positions at Microsoft, a software company, including, beginning in 2006, Chief Financial Officer of the Server and Tools division, where Ms. Kress was responsible for financial strategy, planning, reporting and business development for the division. Prior to joining Microsoft, Ms. Kress spent eight years at Texas Instruments Incorporated, a semiconductor company, where she held a variety of finance positions. Ms. Kress holds a B.S. degree in Finance from University of Arizona and an M.B.A. degree from Southern Methodist University.",
+  "context": {
+    "preceding_paragraph": "",
+    "section_header": ""
+  },
+  "markdown": "|Jen-Hsun Huang|Col2|62|Col4|President and Chief Executive Officer|\n|---|---|---|---|---|\n|Colette M. Kress||57||Executive Vice President and Chief Financial Officer|\n|Ajay K. Puri||70||Executive Vice President, Worldwide Field Operations|\n|Debora Shoquist||70||Executive Vice President, Operations|\n|Timothy S. Teter||58||Executive Vice President and General Counsel|\n\n",
+  "data": [
+    [
+      "Jen-Hsun Huang",
+      "",
+      "62",
+      "",
+      "President and Chief Executive Officer"
+    ],
+    [
+      "Colette M. Kress",
+      "",
+      "57",
+      "",
+      "Executive Vice President and Chief Financial Officer"
+    ],
+    [
+      "Ajay K. Puri",
+      "",
+      "70",
+      "",
+      "Executive Vice President, Worldwide Field Operations"
+    ],
+    [
+      "Debora Shoquist",
+      "",
+      "70",
+      "",
+      "Executive Vice President, Operations"
+    ],
+    [
+      "Timothy S. Teter",
+      "",
+      "58",
+      "",
+      "Executive Vice President and General Counsel"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    111.802685546875,
+    591.6856427873884,
+    166.05029296875
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "page53_table1",
+  "page": 53,
+  "title": "Consolidated Statements of Comprehensive Income",
+  "caption": "See accompanying Notes to the Consolidated Financial Statements.",
+  "context": {
+    "preceding_paragraph": "",
+    "section_header": ""
+  },
+  "markdown": "|Net income|$|72,880|Col4|$|29,760|Col7|$|4,368|\n|---|---|---|---|---|---|---|---|---|\n|Other comprehensive income (loss), net of tax|||||||||\n|Available-for-sale securities:|||||||||\n|Net change in unrealized gain (loss)|1|1||80|80||(31)|(31)|\n|Reclassification adjustments for net realized gain included in net income|—|—||—|—||1|1|\n|Net change in unrealized gain (loss)|1|1||80|80||(30)|(30)|\n|Cash flow hedges:|||||||||\n|Net change in unrealized gain|21|21||38|38||47|47|\n|Reclassification adjustments for net realized loss included in net income|(21)|(21)||(48)|(48)||(49)|(49)|\n|Net change in unrealized loss|—|—||(10)|(10)||(2)|(2)|\n|Other comprehensive income (loss), net of tax|1|1||70|70||(32)|(32)|\n|Total comprehensive income|$|72,881||$|29,830||$|4,336|\n\n",
+  "data": [
+    [
+      "Net income",
+      "$",
+      "72,880",
+      "",
+      "$",
+      "29,760",
+      "",
+      "$",
+      "4,368"
+    ],
+    [
+      "Other comprehensive income (loss), net of tax",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Available-for-sale securities:",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Net change in unrealized gain (loss)",
+      "1",
+      null,
+      "",
+      "80",
+      null,
+      "",
+      "(31)",
+      null
+    ],
+    [
+      "Reclassification adjustments for net realized gain included in net income",
+      "—",
+      null,
+      "",
+      "—",
+      null,
+      "",
+      "1",
+      null
+    ],
+    [
+      "Net change in unrealized gain (loss)",
+      "1",
+      null,
+      "",
+      "80",
+      null,
+      "",
+      "(30)",
+      null
+    ],
+    [
+      "Cash flow hedges:",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Net change in unrealized gain",
+      "21",
+      null,
+      "",
+      "38",
+      null,
+      "",
+      "47",
+      null
+    ],
+    [
+      "Reclassification adjustments for net realized loss included in net income",
+      "(21)",
+      null,
+      "",
+      "(48)",
+      null,
+      "",
+      "(49)",
+      null
+    ],
+    [
+      "Net change in unrealized loss",
+      "—",
+      null,
+      "",
+      "(10)",
+      null,
+      "",
+      "(2)",
+      null
+    ],
+    [
+      "Other comprehensive income (loss), net of tax",
+      "1",
+      null,
+      "",
+      "70",
+      null,
+      "",
+      "(32)",
+      null
+    ],
+    [
+      "Total comprehensive income",
+      "$",
+      "72,881",
+      "",
+      "$",
+      "29,830",
+      "",
+      "$",
+      "4,336"
+    ]
+  ],
+  "bbox": [
+    18.85178347996303,
+    121.457763671875,
+    592.5776083809989,
+    257.891845703125
+  ]
+}

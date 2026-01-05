@@ -1,0 +1,79 @@
+{
+  "id": "page81_table1",
+  "page": 81,
+  "title": "Notes to the Consolidated Financial Statements",
+  "caption": "Between fiscal years 2026 and 2030, we expect to commence leases with future obligations of $7.6 billion primarily of data center and office operating leases, with lease terms of 3 to 15.5 years. Operating lease expenses for fiscal years 2025, 2024, and 2023 were $356 million, $269 million, and $193 million, respectively. Short-term and variable lease expenses for fiscal years 2025, 2024, and 2023 were not significant. Other information related to leases was as follows: Year Ended Jan 26, 2025 Jan 28, 2024 Jan 29, 2023",
+  "context": {
+    "preceding_paragraph": "NVIDIA Corporation and Subsidiaries Notes to the Consolidated Financial Statements",
+    "section_header": ""
+  },
+  "markdown": "|Fiscal Year:|Col2|Col3|\n|---|---|---|\n|2026|$|354|\n|2027|331|331|\n|2028|337|337|\n|2029|301|301|\n|2030|226|226|\n|2031 and thereafter|537|537|\n|Total|2,086|2,086|\n|Less imputed interest|279|279|\n|Present value of net future minimum lease payments|1,807|1,807|\n|Less short-term operating lease liabilities|288|288|\n|Long-term operating lease liabilities|$|1,519|\n\n",
+  "data": [
+    [
+      "Fiscal Year:",
+      "",
+      null
+    ],
+    [
+      "2026",
+      "$",
+      "354"
+    ],
+    [
+      "2027",
+      "331",
+      null
+    ],
+    [
+      "2028",
+      "337",
+      null
+    ],
+    [
+      "2029",
+      "301",
+      null
+    ],
+    [
+      "2030",
+      "226",
+      null
+    ],
+    [
+      "2031 and thereafter",
+      "537",
+      null
+    ],
+    [
+      "Total",
+      "2,086",
+      null
+    ],
+    [
+      "Less imputed interest",
+      "279",
+      null
+    ],
+    [
+      "Present value of net future minimum lease payments",
+      "1,807",
+      null
+    ],
+    [
+      "Less short-term operating lease liabilities",
+      "288",
+      null
+    ],
+    [
+      "Long-term operating lease liabilities",
+      "$",
+      "1,519"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    111.375,
+    591.0749437736742,
+    244.44670758928572
+  ]
+}

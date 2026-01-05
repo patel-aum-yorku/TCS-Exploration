@@ -1,0 +1,283 @@
+{
+  "id": "page52_table1",
+  "page": 52,
+  "title": "Consolidated Statements of Income",
+  "caption": "See accompanying Notes to the Consolidated Financial Statements.",
+  "context": {
+    "preceding_paragraph": "NVIDIA Corporation and Subsidiaries",
+    "section_header": ""
+  },
+  "markdown": "|Revenue|$|130,497|Col4|$|60,922|Col7|$|26,974|\n|---|---|---|---|---|---|---|---|---|\n|Cost of revenue|32,639|32,639||16,621|16,621||11,618|11,618|\n|Gross profit|97,858|97,858||44,301|44,301||15,356|15,356|\n|Operating expenses|||||||||\n|Research and development|12,914|12,914||8,675|8,675||7,339|7,339|\n|Sales, general and administrative|3,491|3,491||2,654|2,654||2,440|2,440|\n|Acquisition termination cost|—|—||—|—||1,353|1,353|\n|Total operating expenses|16,405|16,405||11,329|11,329||11,132|11,132|\n|Operating income|81,453|81,453||32,972|32,972||4,224|4,224|\n|Interest income|1,786|1,786||866|866||267|267|\n|Interest expense|(247)|(247)||(257)|(257)||(262)|(262)|\n|Other, net|1,034|1,034||237|237||(48)|(48)|\n|Other income (expense), net|2,573|2,573||846|846||(43)|(43)|\n|Income before income tax|84,026|84,026||33,818|33,818||4,181|4,181|\n|Income tax expense (benefit)|11,146|11,146||4,058|4,058||(187)|(187)|\n|Net income|$|72,880||$|29,760||$|4,368|\n||||||||||\n|Net income per share:|||||||||\n|Basic|$|2.97||$|1.21||$|0.18|\n|Diluted|$|2.94||$|1.19||$|0.17|\n||||||||||\n|Weighted average shares used in per share computation:|||||||||\n|Basic|24,555|24,555||24,690|24,690||24,870|24,870|\n|Diluted|24,804|24,804||24,940|24,940||25,070|25,070|\n\n",
+  "data": [
+    [
+      "Revenue",
+      "$",
+      "130,497",
+      "",
+      "$",
+      "60,922",
+      "",
+      "$",
+      "26,974"
+    ],
+    [
+      "Cost of revenue",
+      "32,639",
+      null,
+      "",
+      "16,621",
+      null,
+      "",
+      "11,618",
+      null
+    ],
+    [
+      "Gross profit",
+      "97,858",
+      null,
+      "",
+      "44,301",
+      null,
+      "",
+      "15,356",
+      null
+    ],
+    [
+      "Operating expenses",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Research and development",
+      "12,914",
+      null,
+      "",
+      "8,675",
+      null,
+      "",
+      "7,339",
+      null
+    ],
+    [
+      "Sales, general and administrative",
+      "3,491",
+      null,
+      "",
+      "2,654",
+      null,
+      "",
+      "2,440",
+      null
+    ],
+    [
+      "Acquisition termination cost",
+      "—",
+      null,
+      "",
+      "—",
+      null,
+      "",
+      "1,353",
+      null
+    ],
+    [
+      "Total operating expenses",
+      "16,405",
+      null,
+      "",
+      "11,329",
+      null,
+      "",
+      "11,132",
+      null
+    ],
+    [
+      "Operating income",
+      "81,453",
+      null,
+      "",
+      "32,972",
+      null,
+      "",
+      "4,224",
+      null
+    ],
+    [
+      "Interest income",
+      "1,786",
+      null,
+      "",
+      "866",
+      null,
+      "",
+      "267",
+      null
+    ],
+    [
+      "Interest expense",
+      "(247)",
+      null,
+      "",
+      "(257)",
+      null,
+      "",
+      "(262)",
+      null
+    ],
+    [
+      "Other, net",
+      "1,034",
+      null,
+      "",
+      "237",
+      null,
+      "",
+      "(48)",
+      null
+    ],
+    [
+      "Other income (expense), net",
+      "2,573",
+      null,
+      "",
+      "846",
+      null,
+      "",
+      "(43)",
+      null
+    ],
+    [
+      "Income before income tax",
+      "84,026",
+      null,
+      "",
+      "33,818",
+      null,
+      "",
+      "4,181",
+      null
+    ],
+    [
+      "Income tax expense (benefit)",
+      "11,146",
+      null,
+      "",
+      "4,058",
+      null,
+      "",
+      "(187)",
+      null
+    ],
+    [
+      "Net income",
+      "$",
+      "72,880",
+      "",
+      "$",
+      "29,760",
+      "",
+      "$",
+      "4,368"
+    ],
+    [
+      "",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Net income per share:",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Basic",
+      "$",
+      "2.97",
+      "",
+      "$",
+      "1.21",
+      "",
+      "$",
+      "0.18"
+    ],
+    [
+      "Diluted",
+      "$",
+      "2.94",
+      "",
+      "$",
+      "1.19",
+      "",
+      "$",
+      "0.17"
+    ],
+    [
+      "",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Weighted average shares used in per share computation:",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Basic",
+      "24,555",
+      null,
+      "",
+      "24,690",
+      null,
+      "",
+      "24,870",
+      null
+    ],
+    [
+      "Diluted",
+      "24,804",
+      null,
+      "",
+      "24,940",
+      null,
+      "",
+      "25,070",
+      null
+    ]
+  ],
+  "bbox": [
+    22.949996948242188,
+    121.46592310855263,
+    587.9632998379794,
+    396.94317626953125
+  ]
+}

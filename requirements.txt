@@ -1,0 +1,20 @@
+# Core RAG & LLM frameworks
+langchain
+langchain-google-genai
+langchain-community
+langgraph
+langchain-text-splitters
+# PDF Parsing
+pymupdf4llm
+pymupdf
+
+# Utilities
+python-dotenv
+pydantic
+
+boto3 
+langchain-aws
+numpy
+# PostgreSQL
+psycopg2-binary 
+pgvector

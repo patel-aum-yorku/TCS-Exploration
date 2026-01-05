@@ -1,0 +1,63 @@
+{
+  "id": "page73_table3",
+  "page": 73,
+  "title": "Accrual for Product Warranty Liabilities",
+  "caption": "In fiscal years 2025, 2024, and 2023 the additions in product warranty liabilities primarily related to Compute & Networking segment. We have provided indemnities for matters such as tax, product, and employee liabilities. We have included intellectual property indemnification provisions in our technology-related agreements with third parties. Maximum potential future payments cannot be estimated because many of these agreements do not have a maximum stated liability. We have not recorded any liability in our Consolidated Financial Statements for such indemnifications. Litigation Securities Class Action and Derivative Lawsuits",
+  "context": {
+    "preceding_paragraph": "Total future purchase commitments as of January 26, 2025 are as follows:",
+    "section_header": ""
+  },
+  "markdown": "|Balance at beginning of period|$|306|Col4|$|82|Col7|$|46|\n|---|---|---|---|---|---|---|---|---|\n|Additions|1,203|1,203||278|278||145|145|\n|Utilization|(219)|(219)||(54)|(54)||(109)|(109)|\n|Balance at end of period|$|1,290||$|306||$|82|\n\n",
+  "data": [
+    [
+      "Balance at beginning of period",
+      "$",
+      "306",
+      "",
+      "$",
+      "82",
+      "",
+      "$",
+      "46"
+    ],
+    [
+      "Additions",
+      "1,203",
+      null,
+      "",
+      "278",
+      null,
+      "",
+      "145",
+      null
+    ],
+    [
+      "Utilization",
+      "(219)",
+      null,
+      "",
+      "(54)",
+      null,
+      "",
+      "(109)",
+      null
+    ],
+    [
+      "Balance at end of period",
+      "$",
+      "1,290",
+      "",
+      "$",
+      "306",
+      "",
+      "$",
+      "82"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    310.5,
+    593.2852460075827,
+    358.468017578125
+  ]
+}

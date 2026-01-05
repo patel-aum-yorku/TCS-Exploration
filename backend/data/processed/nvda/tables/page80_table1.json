@@ -1,0 +1,51 @@
+{
+  "id": "page80_table1",
+  "page": 80,
+  "title": "Notes to the Consolidated Financial Statements",
+  "caption": "* Less than 10% of total revenue. No customer represented 10% or more of total revenue for fiscal year 2023. The following table summarizes revenue by specialized markets: Year Ended Jan 26, 2025 Jan 28, 2024 Jan 29, 2023 Revenue by End Market: (In millions) Data Center 115,186 47,525 15,005 Compute 102,196 38,950 11,317 Networking 12,990 Gaming 11,350 10,447 Professional Visualization Automotive OEM and Other Total revenue 130,497 60,922 26,974",
+  "context": {
+    "preceding_paragraph": "NVIDIA Corporation and Subsidiaries Notes to the Consolidated Financial Statements",
+    "section_header": ""
+  },
+  "markdown": "|Year Ended Jan 26, 2025 Jan 28, 2024|Col2|Col3|Col4|Col5|Col6|\n|---|---|---|---|---|---|\n|||||||\n|Direct Customer A|12|%||*|*|\n|Direct Customer B|11|%||13|%|\n|Direct Customer C|11|%||*|*|\n\n",
+  "data": [
+    [
+      "",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Direct Customer A",
+      "12",
+      "%",
+      "",
+      "*",
+      null
+    ],
+    [
+      "Direct Customer B",
+      "11",
+      "%",
+      "",
+      "13",
+      "%"
+    ],
+    [
+      "Direct Customer C",
+      "11",
+      "%",
+      "",
+      "*",
+      null
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    139.34040178571428,
+    592.0363020463424,
+    174.828125
+  ]
+}

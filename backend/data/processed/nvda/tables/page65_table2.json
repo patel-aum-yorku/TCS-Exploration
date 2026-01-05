@@ -1,0 +1,79 @@
+{
+  "id": "page65_table2",
+  "page": 65,
+  "title": "Note 6 - Amortizable Intangible Assets",
+  "caption": "Amortization expense associated with intangible assets for fiscal years 2025, 2024, and 2023 was $593 million, $614 million, and $699 million, respectively.",
+  "context": {
+    "preceding_paragraph": "Basic (1) $ 2.97  $ 1.21  $ 0.18  Diluted (2) $ 2.94  $ 1.19  $ 0.17",
+    "section_header": ""
+  },
+  "markdown": "|Acquisition-related intangible<br>assets|$|2,900|Col4|$|(2,264)|Col7|$|636|Col10|$|2,642|Col13|$|(1,720)|Col16|$|922|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n|Patents and licensed technology|449|449||(278)|(278)||171|171||449|449||(259)|(259)||190|190|\n|Total intangible assets|$|3,349||$|(2,542)||$|807||$|3,091||$|(1,979)||$|1,112|\n\n",
+  "data": [
+    [
+      "Acquisition-related intangible\nassets",
+      "$",
+      "2,900",
+      "",
+      "$",
+      "(2,264)",
+      "",
+      "$",
+      "636",
+      "",
+      "$",
+      "2,642",
+      "",
+      "$",
+      "(1,720)",
+      "",
+      "$",
+      "922"
+    ],
+    [
+      "Patents and licensed technology",
+      "449",
+      null,
+      "",
+      "(278)",
+      null,
+      "",
+      "171",
+      null,
+      "",
+      "449",
+      null,
+      "",
+      "(259)",
+      null,
+      "",
+      "190",
+      null
+    ],
+    [
+      "Total intangible assets",
+      "$",
+      "3,349",
+      "",
+      "$",
+      "(2,542)",
+      "",
+      "$",
+      "807",
+      "",
+      "$",
+      "3,091",
+      "",
+      "$",
+      "(1,979)",
+      "",
+      "$",
+      "1,112"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    481.27734375,
+    592.3124347555226,
+    523.1461148648649
+  ]
+}

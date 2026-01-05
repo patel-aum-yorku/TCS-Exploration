@@ -1,0 +1,179 @@
+{
+  "id": "page76_table1",
+  "page": 76,
+  "title": "Notes to the Consolidated Financial Statements",
+  "caption": "(1)    Net deferred tax asset includes long-term deferred tax assets of $11 billion and $6.1 billion and long-term deferred tax liabilities of $886 million and $462 million for fiscal years 2025 and 2024, respectively. Long-term deferred tax liabilities are included in other long-term liabilities on our Consolidated Balance Sheets. As of January 26, 2025, we intend to indefinitely reinvest approximately $1.4 billion of cumulative undistributed earnings held by certain subsidiaries. We have not provided the amount of unrecognized deferred tax liabilities for temporary differences related to these investments as the determination of such amount is not practicable. As of both January 26, 2025 and January 28, 2024, we had a valuation allowance of $1.6 billion related to capital loss carryforwards, and certain state and other deferred tax assets that management determined are not likely to be realized due, in part, to jurisdictional projections of future taxable income, including capital gains. To the extent realization of the deferred tax assets becomes more-likely-than-not, we would recognize such deferred tax assets as income tax benefits during the period.",
+  "context": {
+    "preceding_paragraph": "NVIDIA Corporation and Subsidiaries Notes to the Consolidated Financial Statements",
+    "section_header": ""
+  },
+  "markdown": "|Deferred tax assets:|Col2|Col3|Col4|Col5|Col6|\n|---|---|---|---|---|---|\n|Capitalized research and development expenditure|$|6,256||$|3,376|\n|GILTI deferred tax assets|2,820|2,820||1,576|1,576|\n|Accruals and reserves, not currently deductible for tax purposes|2,058|2,058||1,121|1,121|\n|Research and other tax credit carryforwards|759|759||936|936|\n|Net operating loss and capital loss carryforwards|456|456||439|439|\n|Operating lease liabilities|299|299||263|263|\n|Stock-based compensation|124|124||106|106|\n|Property, equipment and intangible assets|82|82||64|64|\n|Other deferred tax assets|360|360||179|179|\n|Gross deferred tax assets|13,214|13,214||8,060|8,060|\n|Less valuation allowance|(1,610)|(1,610)||(1,552)|(1,552)|\n|Total deferred tax assets|11,604|11,604||6,508|6,508|\n|Deferred tax liabilities:||||||\n|Unremitted earnings of foreign subsidiaries|(891)|(891)||(502)|(502)|\n|Operating lease assets|(286)|(286)||(255)|(255)|\n|Equity investments|(264)|(264)||(60)|(60)|\n|Acquired intangibles|(70)|(70)||(74)|(74)|\n|Gross deferred tax liabilities|(1,511)|(1,511)||(891)|(891)|\n|Net deferred tax asset (1)|$|10,093||$|5,617|\n\n",
+  "data": [
+    [
+      "Deferred tax assets:",
+      "",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Capitalized research and development expenditure",
+      "$",
+      "6,256",
+      "",
+      "$",
+      "3,376"
+    ],
+    [
+      "GILTI deferred tax assets",
+      "2,820",
+      null,
+      "",
+      "1,576",
+      null
+    ],
+    [
+      "Accruals and reserves, not currently deductible for tax purposes",
+      "2,058",
+      null,
+      "",
+      "1,121",
+      null
+    ],
+    [
+      "Research and other tax credit carryforwards",
+      "759",
+      null,
+      "",
+      "936",
+      null
+    ],
+    [
+      "Net operating loss and capital loss carryforwards",
+      "456",
+      null,
+      "",
+      "439",
+      null
+    ],
+    [
+      "Operating lease liabilities",
+      "299",
+      null,
+      "",
+      "263",
+      null
+    ],
+    [
+      "Stock-based compensation",
+      "124",
+      null,
+      "",
+      "106",
+      null
+    ],
+    [
+      "Property, equipment and intangible assets",
+      "82",
+      null,
+      "",
+      "64",
+      null
+    ],
+    [
+      "Other deferred tax assets",
+      "360",
+      null,
+      "",
+      "179",
+      null
+    ],
+    [
+      "Gross deferred tax assets",
+      "13,214",
+      null,
+      "",
+      "8,060",
+      null
+    ],
+    [
+      "Less valuation allowance",
+      "(1,610)",
+      null,
+      "",
+      "(1,552)",
+      null
+    ],
+    [
+      "Total deferred tax assets",
+      "11,604",
+      null,
+      "",
+      "6,508",
+      null
+    ],
+    [
+      "Deferred tax liabilities:",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Unremitted earnings of foreign subsidiaries",
+      "(891)",
+      null,
+      "",
+      "(502)",
+      null
+    ],
+    [
+      "Operating lease assets",
+      "(286)",
+      null,
+      "",
+      "(255)",
+      null
+    ],
+    [
+      "Equity investments",
+      "(264)",
+      null,
+      "",
+      "(60)",
+      null
+    ],
+    [
+      "Acquired intangibles",
+      "(70)",
+      null,
+      "",
+      "(74)",
+      null
+    ],
+    [
+      "Gross deferred tax liabilities",
+      "(1,511)",
+      null,
+      "",
+      "(891)",
+      null
+    ],
+    [
+      "Net deferred tax asset (1)",
+      "$",
+      "10,093",
+      "",
+      "$",
+      "5,617"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    131.625,
+    592.4504949396306,
+    351.73721590909093
+  ]
+}

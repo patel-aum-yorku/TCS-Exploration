@@ -1,0 +1,67 @@
+{
+  "id": "page70_table3",
+  "page": 70,
+  "title": "Jan 26, 2025",
+  "caption": "Income tax payable is comprised of the long-term portion of the one-time transition tax payable, unrecognized tax benefits, and related interest and penalties. Includes unearned revenue related to hardware support, software support and cloud services.",
+  "context": {
+    "preceding_paragraph": "(1) Prepaid supply and capacity agreements of $3.3 billion and $2.5 billion were included in Prepaid expenses and other current assets as of January 26, 2025 and January 28, 2024, respectively.",
+    "section_header": ""
+  },
+  "markdown": "|Income tax payable (1)|$|2,188|Col4|$|1,361|\n|---|---|---|---|---|---|\n|Deferred revenue (2)|976|976||573|573|\n|Deferred income tax|886|886||462|462|\n|Licenses payable|116|116||80|80|\n|Other|79|79||65|65|\n|Total other long-term liabilities|$|4,245||$|2,541|\n\n",
+  "data": [
+    [
+      "Income tax payable (1)",
+      "$",
+      "2,188",
+      "",
+      "$",
+      "1,361"
+    ],
+    [
+      "Deferred revenue (2)",
+      "976",
+      null,
+      "",
+      "573",
+      null
+    ],
+    [
+      "Deferred income tax",
+      "886",
+      null,
+      "",
+      "462",
+      null
+    ],
+    [
+      "Licenses payable",
+      "116",
+      null,
+      "",
+      "80",
+      null
+    ],
+    [
+      "Other",
+      "79",
+      null,
+      "",
+      "65",
+      null
+    ],
+    [
+      "Total other long-term liabilities",
+      "$",
+      "4,245",
+      "",
+      "$",
+      "2,541"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    502.203125,
+    593.0874554669416,
+    568.4129971590909
+  ]
+}

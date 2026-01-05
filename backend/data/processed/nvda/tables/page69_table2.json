@@ -1,0 +1,51 @@
+{
+  "id": "page69_table2",
+  "page": 69,
+  "title": "Note 9 - Balance Sheet Components",
+  "caption": "(1)    In fiscal years 2025 and 2024, we recorded an inventory provision of $1.6 billion and $774 million, respectively, in cost of revenue. Jan 26, 2025 Jan 28, 2024 Estimated Useful Life Property and Equipment: (In millions) (In years) Buildings, leasehold improvements, and furniture Equipment, compute hardware, and software Construction in process Total property and equipment, gross 10,684 Accumulated depreciation and amortization (4,401) (3,509)",
+  "context": {
+    "preceding_paragraph": "Balance at beginning of period $ 1,321  $ 288  Adjustments related to non-marketable equity securities:",
+    "section_header": ""
+  },
+  "markdown": "|Raw materials|$|3,408|Col4|$|1,719|\n|---|---|---|---|---|---|\n|Work in process|3,399|3,399||1,505|1,505|\n|Finished goods|3,273|3,273||2,058|2,058|\n|Total inventories (1)|$|10,080||$|5,282|\n\n",
+  "data": [
+    [
+      "Raw materials",
+      "$",
+      "3,408",
+      "",
+      "$",
+      "1,719"
+    ],
+    [
+      "Work in process",
+      "3,399",
+      null,
+      "",
+      "1,505",
+      null
+    ],
+    [
+      "Finished goods",
+      "3,273",
+      null,
+      "",
+      "2,058",
+      null
+    ],
+    [
+      "Total inventories (1)",
+      "$",
+      "10,080",
+      "",
+      "$",
+      "5,282"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    393.52734375,
+    576.9224426269532,
+    438.8046875
+  ]
+}

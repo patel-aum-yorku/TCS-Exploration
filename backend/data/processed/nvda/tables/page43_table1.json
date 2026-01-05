@@ -1,0 +1,63 @@
+{
+  "id": "page43_table1",
+  "page": 43,
+  "title": "Other Income (Expense), Net",
+  "caption": "The increase in interest income was primarily due to growth in cash, cash equivalents, and marketable securities. Interest expense is comprised of coupon interest and debt discount amortization related to our notes. Other, net consists of realized or unrealized gains and losses from investments in non-marketable equity securities, publicly-held equity securities, and the impact of changes in foreign currency rates. The change in Other, net, compared to fiscal year 2024, was primarily driven by an increase in fair value of our non- marketable equity securities and publicly-held equity securities. Refer to Note 8 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for additional information regarding our non-marketable equity securities. Income Taxes",
+  "context": {
+    "preceding_paragraph": "Other Income (Expense), Net",
+    "section_header": ""
+  },
+  "markdown": "|Interest income|$|1,786|Col4|$|866|Col7|$|920|\n|---|---|---|---|---|---|---|---|---|\n|Interest expense|(247)|(247)||(257)|(257)||10|10|\n|Other, net|1,034|1,034||237|237||797|797|\n|Other income (expense), net|$|2,573||$|846||$|1,727|\n\n",
+  "data": [
+    [
+      "Interest income",
+      "$",
+      "1,786",
+      "",
+      "$",
+      "866",
+      "",
+      "$",
+      "920"
+    ],
+    [
+      "Interest expense",
+      "(247)",
+      null,
+      "",
+      "(257)",
+      null,
+      "",
+      "10",
+      null
+    ],
+    [
+      "Other, net",
+      "1,034",
+      null,
+      "",
+      "237",
+      null,
+      "",
+      "797",
+      null
+    ],
+    [
+      "Other income (expense), net",
+      "$",
+      "2,573",
+      "",
+      "$",
+      "846",
+      "",
+      "$",
+      "1,727"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    133.650390625,
+    592.7624384562174,
+    178.23524876644737
+  ]
+}

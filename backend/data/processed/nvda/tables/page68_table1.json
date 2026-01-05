@@ -1,0 +1,61 @@
+{
+  "id": "page68_table1",
+  "page": 68,
+  "title": "Notes to the Consolidated Financial Statements",
+  "caption": "Note 8 - Fair Value of Financial Assets and Liabilities and Non-marketable Equity Securities The fair values of our financial assets and liabilities are determined using quoted market prices of identical assets or market prices of similar assets from active markets. We review fair value classification on a quarterly basis. Fair Value at Pricing Category Jan 26, 2025 Jan 28, 2024 (In millions) Assets Cash equivalents and marketable securities:",
+  "context": {
+    "preceding_paragraph": "NVIDIA Corporation and Subsidiaries Notes to the Consolidated Financial Statements",
+    "section_header": ""
+  },
+  "markdown": "|Less than one year|$|18,426|Col4|$|18,450|Col7|$|16,336|Col10|$|16,329|\n|---|---|---|---|---|---|---|---|---|---|---|---|\n|Due in 1 - 5 years|23,636|23,636||23,656|23,656||9,348|9,348||9,395|9,395|\n|Total|$|42,062||$|42,106||$|25,684||$|25,724|\n\n",
+  "data": [
+    [
+      "Less than one year",
+      "$",
+      "18,426",
+      "",
+      "$",
+      "18,450",
+      "",
+      "$",
+      "16,336",
+      "",
+      "$",
+      "16,329"
+    ],
+    [
+      "Due in 1 - 5 years",
+      "23,636",
+      null,
+      "",
+      "23,656",
+      null,
+      "",
+      "9,348",
+      null,
+      "",
+      "9,395",
+      null
+    ],
+    [
+      "Total",
+      "$",
+      "42,062",
+      "",
+      "$",
+      "42,106",
+      "",
+      "$",
+      "25,684",
+      "",
+      "$",
+      "25,724"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    133.65234375,
+    592.8773989470109,
+    168.10884232954547
+  ]
+}

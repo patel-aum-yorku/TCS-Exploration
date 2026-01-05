@@ -1,0 +1,59 @@
+{
+  "id": "page80_table3",
+  "page": 80,
+  "title": "Revenue by End Market:",
+  "caption": "Note 17 - Leases Our lease obligations primarily consist of operating leases for our headquarters' campus and domestic and international offices and data centers, with lease periods expiring between fiscal years 2026 and 2037. Future minimum lease obligations under our non-cancelable lease agreements as of January 26, 2025 were as follows:",
+  "context": {
+    "preceding_paragraph": "* Less than 10% of total revenue.",
+    "section_header": ""
+  },
+  "markdown": "|United States|$|3,626|Col4|$|2,595|\n|---|---|---|---|---|---|\n|Taiwan|1,481|1,481||773|773|\n|Israel|840|840||325|325|\n|Other|336|336||221|221|\n|Total long-lived assets|$|6,283||$|3,914|\n\n",
+  "data": [
+    [
+      "United States",
+      "$",
+      "3,626",
+      "",
+      "$",
+      "2,595"
+    ],
+    [
+      "Taiwan",
+      "1,481",
+      null,
+      "",
+      "773",
+      null
+    ],
+    [
+      "Israel",
+      "840",
+      null,
+      "",
+      "325",
+      null
+    ],
+    [
+      "Other",
+      "336",
+      null,
+      "",
+      "221",
+      null
+    ],
+    [
+      "Total long-lived assets",
+      "$",
+      "6,283",
+      "",
+      "$",
+      "3,914"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    430.65234375,
+    592.0363020463424,
+    486.05288461538464
+  ]
+}

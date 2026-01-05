@@ -1,0 +1,55 @@
+{
+  "id": "page44_table1",
+  "page": 44,
+  "title": "Outstanding Indebtedness and Commercial Paper Program",
+  "caption": "We have a $575 million commercial paper program to support general corporate purposes. As of January 26, 2025, we had no commercial paper outstanding.",
+  "context": {
+    "preceding_paragraph": "Except for approximately $1.7 billion of cash, cash equivalents, and marketable securities held outside the U.S. for which we have not accrued any related foreign or state taxes if we repatriate these amounts to the U.S., substantially all of our cash, cash equivalents and marketable securities held outside the U.S. at the end of fiscal year 2025 are available for use in the U.S. without incurring additional U.S. federal income taxes.",
+    "section_header": ""
+  },
+  "markdown": "|Due in one year|Col2|$|—|\n|---|---|---|---|\n|Due in one to five years||2,250|2,250|\n|Due in five to ten years||2,750|2,750|\n|Due in greater than ten years||3,500|3,500|\n|Unamortized debt discount and issuance costs||(37)|(37)|\n|Net long-term carrying amount||$|8,463|\n\n",
+  "data": [
+    [
+      "Due in one year",
+      "",
+      "$",
+      "—"
+    ],
+    [
+      "Due in one to five years",
+      "",
+      "2,250",
+      null
+    ],
+    [
+      "Due in five to ten years",
+      "",
+      "2,750",
+      null
+    ],
+    [
+      "Due in greater than ten years",
+      "",
+      "3,500",
+      null
+    ],
+    [
+      "Unamortized debt discount and issuance costs",
+      "",
+      "(37)",
+      null
+    ],
+    [
+      "Net long-term carrying amount",
+      "",
+      "$",
+      "8,463"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    481.951171875,
+    593.132097516741,
+    548.1854248046875
+  ]
+}

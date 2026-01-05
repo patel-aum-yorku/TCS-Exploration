@@ -1,0 +1,109 @@
+{
+  "id": "page75_table1",
+  "page": 75,
+  "title": "Note 13 - Income Taxes",
+  "caption": "Income before income tax consists of the following: Year Ended Jan 26, 2025 Jan 28, 2024 Jan 29, 2023 (In millions) 77,456 29,495 Foreign Income before income tax 84,026 33,818",
+  "context": {
+    "preceding_paragraph": "NVIDIA Corporation and Subsidiaries Notes to the Consolidated Financial Statements",
+    "section_header": ""
+  },
+  "markdown": "|Federal|$|14,032|$|5,710|Col6|$ 1,703|\n|---|---|---|---|---|---|---|\n|State|892|892||335||46|\n|Foreign|699|699||502||228|\n|Total current|15,623|15,623||6,547||1,977|\n|Deferred income taxes:|||||||\n|Federal|(4,515)|(4,515)||(2,499)||(2,165)|\n|State|(242)|(242)||(206)||—|\n|Foreign|280|280||216||1|\n|Total deferred|(4,477)|(4,477)||(2,489)||(2,164)|\n|Income tax expense (benefit)|$|11,146|$|4,058||$<br>(187)|\n\n",
+  "data": [
+    [
+      "Federal",
+      "$",
+      "14,032",
+      "$",
+      "5,710",
+      "",
+      "$ 1,703"
+    ],
+    [
+      "State",
+      "892",
+      null,
+      "",
+      "335",
+      "",
+      "46"
+    ],
+    [
+      "Foreign",
+      "699",
+      null,
+      "",
+      "502",
+      "",
+      "228"
+    ],
+    [
+      "Total current",
+      "15,623",
+      null,
+      "",
+      "6,547",
+      "",
+      "1,977"
+    ],
+    [
+      "Deferred income taxes:",
+      "",
+      null,
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Federal",
+      "(4,515)",
+      null,
+      "",
+      "(2,499)",
+      "",
+      "(2,165)"
+    ],
+    [
+      "State",
+      "(242)",
+      null,
+      "",
+      "(206)",
+      "",
+      "—"
+    ],
+    [
+      "Foreign",
+      "280",
+      null,
+      "",
+      "216",
+      "",
+      "1"
+    ],
+    [
+      "Total deferred",
+      "(4,477)",
+      null,
+      "",
+      "(2,489)",
+      "",
+      "(2,164)"
+    ],
+    [
+      "Income tax expense (benefit)",
+      "$",
+      "11,146",
+      "$",
+      "4,058",
+      "",
+      "$ (187)"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    173.4765625,
+    592.9030555725097,
+    284.88599917763156
+  ]
+}

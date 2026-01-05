@@ -1,0 +1,63 @@
+{
+  "id": "page62_table1",
+  "page": 62,
+  "title": "Note 3 - Stock-Based Compensation",
+  "caption": "Stock-based compensation capitalized in inventories was not significant during fiscal years 2025, 2024, and 2023.",
+  "context": {
+    "preceding_paragraph": "In November 2024, the FASB issued a new accounting standard requiring disclosures of certain additional expense information on an annual and interim basis, including, among other items, the amounts of purchases of inventory, employee compensation, depreciation and intangible asset amortization included within each income statement expense caption, as applicable. We expect to adopt this standard in our fiscal year 2028 annual report. We do not expect the adoption of this standard to have a material impact on our Consolidated Financial Statements other than additional disclosures.",
+    "section_header": ""
+  },
+  "markdown": "|Cost of revenue|$|178|Col4|$|141|Col7|$|138|\n|---|---|---|---|---|---|---|---|---|\n|Research and development|3,423|3,423||2,532|2,532||1,892|1,892|\n|Sales, general and administrative|1,136|1,136||876|876||680|680|\n|Total|$|4,737||$|3,549||$|2,710|\n\n",
+  "data": [
+    [
+      "Cost of revenue",
+      "$",
+      "178",
+      "",
+      "$",
+      "141",
+      "",
+      "$",
+      "138"
+    ],
+    [
+      "Research and development",
+      "3,423",
+      null,
+      "",
+      "2,532",
+      null,
+      "",
+      "1,892",
+      null
+    ],
+    [
+      "Sales, general and administrative",
+      "1,136",
+      null,
+      "",
+      "876",
+      null,
+      "",
+      "680",
+      null
+    ],
+    [
+      "Total",
+      "$",
+      "4,737",
+      "",
+      "$",
+      "3,549",
+      "",
+      "$",
+      "2,710"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    428.625,
+    593.2124532063802,
+    473.218017578125
+  ]
+}

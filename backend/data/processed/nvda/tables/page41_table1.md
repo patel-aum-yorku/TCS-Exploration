@@ -1,0 +1,9 @@
+# Reportable Segments
+
+*Operating Income by Reportable Segments Year Ended Jan 26, 2025 Jan 28, 2024 Change Change ($ in millions) Compute & Networking 82,875 32,016 50,859 Graphics All Other (6,507) (4,890) (1,617) 81,453 32,972 48,481*
+
+|Compute & Networking|$|116,193|Col4|$|47,405|Col7|$|68,788|Col10|145|%|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|Graphics|14,304|14,304||13,517|13,517||787|787||6|%|
+|Total|$|130,497||$|60,922||$|69,575||114|%|
+

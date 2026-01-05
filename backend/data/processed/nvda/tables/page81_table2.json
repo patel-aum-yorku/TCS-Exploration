@@ -1,0 +1,52 @@
+{
+  "id": "page81_table2",
+  "page": 81,
+  "title": "Jan 26, 2025",
+  "caption": "As of January 26, 2025, our operating leases have a weighted average remaining lease term of 6.5 years and a weighted average discount rate of 4.16%. As of January 28, 2024, our operating leases had a weighted average remaining lease term of 6.1 years and a weighted average discount rate of 3.76%.",
+  "context": {
+    "preceding_paragraph": "Total 2,086  Less imputed interest 279  Present value of net future minimum lease payments 1,807  Less short-term operating lease liabilities 288  Long-term operating lease liabilities $ 1,519",
+    "section_header": ""
+  },
+  "markdown": "|Supplemental cash flows information|Col2|Col3|Col4|Col5|Col6|Col7|Col8|Col9|\n|---|---|---|---|---|---|---|---|---|\n|Operating cash flow used for operating leases|$|313||$|286||$|184|\n|Operating lease assets obtained in exchange for lease<br>obligations|$|877||$|531||$|358|\n\n",
+  "data": [
+    [
+      "Supplemental cash flows information",
+      "",
+      null,
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Operating cash flow used for operating leases",
+      "$",
+      "313",
+      "",
+      "$",
+      "286",
+      "",
+      "$",
+      "184"
+    ],
+    [
+      "Operating lease assets obtained in exchange for lease\nobligations",
+      "$",
+      "877",
+      "",
+      "$",
+      "531",
+      "",
+      "$",
+      "358"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    360.44921875,
+    591.0749437736742,
+    400.94921875
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "page71_table2",
+  "page": 71,
+  "title": "Note 10 - Derivative Financial Instruments",
+  "caption": "The unrealized gains and losses or fair value of our foreign currency contracts were not significant as of January 26, 2025 and January 28, 2024. As of  January  26, 2025,  all foreign currency contracts mature within  18 months. The expected realized gains and losses deferred into accumulated other comprehensive income or loss related to foreign currency forward contracts within the next twelve months were not significant.",
+  "context": {
+    "preceding_paragraph": "(2)    Revenue recognized includes $3.7 billion and $585 million related to customer advances for fiscal years 2025 and 2024, respectively.",
+    "section_header": ""
+  },
+  "markdown": "|Designated as accounting hedges|$|1,424|Col4|$|1,168|\n|---|---|---|---|---|---|\n|Not designated as accounting hedges|$|1,297||$|597|\n\n",
+  "data": [
+    [
+      "Designated as accounting hedges",
+      "$",
+      "1,424",
+      "",
+      "$",
+      "1,168"
+    ],
+    [
+      "Not designated as accounting hedges",
+      "$",
+      "1,297",
+      "",
+      "$",
+      "597"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    461.69921875,
+    593.1899536132812,
+    483.30078125
+  ]
+}

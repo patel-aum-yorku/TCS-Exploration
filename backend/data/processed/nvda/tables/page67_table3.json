@@ -1,0 +1,91 @@
+{
+  "id": "page67_table3",
+  "page": 67,
+  "title": "Unrealized Loss",
+  "caption": "Gross unrealized losses are related to fixed income securities, driven primarily by changes in interest rates. The amortized cost and estimated fair value of debt securities included in cash equivalents and marketable securities are shown below by contractual maturity.",
+  "context": {
+    "preceding_paragraph": "The following tables provide the breakdown of unrealized losses, aggregated by investment category and length of time that individual debt securities have been in a continuous loss position:",
+    "section_header": ""
+  },
+  "markdown": "|Debt securities issued by the U.S.<br>Treasury|$|3,343|Col4|$|(5)|$|1,078|Col9|$|(5)|$|4,421|Col14|$|(10)|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n|Corporate debt securities|1,306|1,306||(3)|(3)|618|618||(2)|(2)|1,924|1,924||(5)|(5)|\n|Debt securities issued by U.S.<br>government agencies|670|670||(1)|(1)|—|—||—|—|670|670||(1)|(1)|\n|Total|$|5,319||$|(9)|$|1,696||$|(7)|$|7,015||$|(16)|\n\n",
+  "data": [
+    [
+      "Debt securities issued by the U.S.\nTreasury",
+      "$",
+      "3,343",
+      "",
+      "$",
+      "(5)",
+      "$",
+      "1,078",
+      "",
+      "$",
+      "(5)",
+      "$",
+      "4,421",
+      "",
+      "$",
+      "(10)"
+    ],
+    [
+      "Corporate debt securities",
+      "1,306",
+      null,
+      "",
+      "(3)",
+      null,
+      "618",
+      null,
+      "",
+      "(2)",
+      null,
+      "1,924",
+      null,
+      "",
+      "(5)",
+      null
+    ],
+    [
+      "Debt securities issued by U.S.\ngovernment agencies",
+      "670",
+      null,
+      "",
+      "(1)",
+      null,
+      "—",
+      null,
+      "",
+      "—",
+      null,
+      "670",
+      null,
+      "",
+      "(1)",
+      null
+    ],
+    [
+      "Total",
+      "$",
+      "5,319",
+      "",
+      "$",
+      "(9)",
+      "$",
+      "1,696",
+      "",
+      "$",
+      "(7)",
+      "$",
+      "7,015",
+      "",
+      "$",
+      "(16)"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    488.02734375,
+    593.1438568859566,
+    548.7991431451613
+  ]
+}

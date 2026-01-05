@@ -1,0 +1,299 @@
+{
+  "id": "page54_table1",
+  "page": 54,
+  "title": "Consolidated Balance Sheets",
+  "caption": "See accompanying Notes to the Consolidated Financial Statements.",
+  "context": {
+    "preceding_paragraph": "",
+    "section_header": ""
+  },
+  "markdown": "|Assets|Col2|Col3|Col4|Col5|Col6|\n|---|---|---|---|---|---|\n|Current assets:||||||\n|Cash and cash equivalents|$|8,589||$|7,280|\n|Marketable securities|34,621|34,621||18,704|18,704|\n|Accounts receivable, net|23,065|23,065||9,999|9,999|\n|Inventories|10,080|10,080||5,282|5,282|\n|Prepaid expenses and other current assets|3,771|3,771||3,080|3,080|\n|Total current assets|80,126|80,126||44,345|44,345|\n|Property and equipment, net|6,283|6,283||3,914|3,914|\n|Operating lease assets|1,793|1,793||1,346|1,346|\n|Goodwill|5,188|5,188||4,430|4,430|\n|Intangible assets, net|807|807||1,112|1,112|\n|Deferred income tax assets|10,979|10,979||6,081|6,081|\n|Other assets|6,425|6,425||4,500|4,500|\n|Total assets|$|111,601||$|65,728|\n|||||||\n|**Liabilities and Shareholders' Equity**||||||\n|Current liabilities:||||||\n|Accounts payable|$|6,310||$|2,699|\n|Accrued and other current liabilities|11,737|11,737||6,682|6,682|\n|Short-term debt|—|—||1,250|1,250|\n|Total current liabilities|18,047|18,047||10,631|10,631|\n|Long-term debt|8,463|8,463||8,459|8,459|\n|Long-term operating lease liabilities|1,519|1,519||1,119|1,119|\n|Other long-term liabilities|4,245|4,245||2,541|2,541|\n|Total liabilities|32,274|32,274||22,750|22,750|\n|Commitments and contingencies - see Note 12|—|—||—|—|\n|Shareholders’ equity:||||||\n|Preferred stock, $0.001 par value; 20 shares authorized; none issued|—|—||—|—|\n|Common stock, $0.001 par value; 80,000 shares authorized; 24,477 shares issued and outstanding as of<br>January 26, 2025; 24,643 shares issued and outstanding as of January 28, 2024|24|24||25|25|\n|Additional paid-in capital|11,237|11,237||13,109|13,109|\n|Accumulated other comprehensive income|28|28||27|27|\n|Retained earnings|68,038|68,038||29,817|29,817|\n|Total shareholders' equity|79,327|79,327||42,978|42,978|\n|Total liabilities and shareholders' equity|$|111,601||$|65,728|\n\n",
+  "data": [
+    [
+      "Assets",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Current assets:",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Cash and cash equivalents",
+      "$",
+      "8,589",
+      "",
+      "$",
+      "7,280"
+    ],
+    [
+      "Marketable securities",
+      "34,621",
+      null,
+      "",
+      "18,704",
+      null
+    ],
+    [
+      "Accounts receivable, net",
+      "23,065",
+      null,
+      "",
+      "9,999",
+      null
+    ],
+    [
+      "Inventories",
+      "10,080",
+      null,
+      "",
+      "5,282",
+      null
+    ],
+    [
+      "Prepaid expenses and other current assets",
+      "3,771",
+      null,
+      "",
+      "3,080",
+      null
+    ],
+    [
+      "Total current assets",
+      "80,126",
+      null,
+      "",
+      "44,345",
+      null
+    ],
+    [
+      "Property and equipment, net",
+      "6,283",
+      null,
+      "",
+      "3,914",
+      null
+    ],
+    [
+      "Operating lease assets",
+      "1,793",
+      null,
+      "",
+      "1,346",
+      null
+    ],
+    [
+      "Goodwill",
+      "5,188",
+      null,
+      "",
+      "4,430",
+      null
+    ],
+    [
+      "Intangible assets, net",
+      "807",
+      null,
+      "",
+      "1,112",
+      null
+    ],
+    [
+      "Deferred income tax assets",
+      "10,979",
+      null,
+      "",
+      "6,081",
+      null
+    ],
+    [
+      "Other assets",
+      "6,425",
+      null,
+      "",
+      "4,500",
+      null
+    ],
+    [
+      "Total assets",
+      "$",
+      "111,601",
+      "",
+      "$",
+      "65,728"
+    ],
+    [
+      "",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Liabilities and Shareholders' Equity",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Current liabilities:",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Accounts payable",
+      "$",
+      "6,310",
+      "",
+      "$",
+      "2,699"
+    ],
+    [
+      "Accrued and other current liabilities",
+      "11,737",
+      null,
+      "",
+      "6,682",
+      null
+    ],
+    [
+      "Short-term debt",
+      "—",
+      null,
+      "",
+      "1,250",
+      null
+    ],
+    [
+      "Total current liabilities",
+      "18,047",
+      null,
+      "",
+      "10,631",
+      null
+    ],
+    [
+      "Long-term debt",
+      "8,463",
+      null,
+      "",
+      "8,459",
+      null
+    ],
+    [
+      "Long-term operating lease liabilities",
+      "1,519",
+      null,
+      "",
+      "1,119",
+      null
+    ],
+    [
+      "Other long-term liabilities",
+      "4,245",
+      null,
+      "",
+      "2,541",
+      null
+    ],
+    [
+      "Total liabilities",
+      "32,274",
+      null,
+      "",
+      "22,750",
+      null
+    ],
+    [
+      "Commitments and contingencies - see Note 12",
+      "—",
+      null,
+      "",
+      "—",
+      null
+    ],
+    [
+      "Shareholders’ equity:",
+      "",
+      null,
+      "",
+      "",
+      null
+    ],
+    [
+      "Preferred stock, $0.001 par value; 20 shares authorized; none issued",
+      "—",
+      null,
+      "",
+      "—",
+      null
+    ],
+    [
+      "Common stock, $0.001 par value; 80,000 shares authorized; 24,477 shares issued and outstanding as of\nJanuary 26, 2025; 24,643 shares issued and outstanding as of January 28, 2024",
+      "24",
+      null,
+      "",
+      "25",
+      null
+    ],
+    [
+      "Additional paid-in capital",
+      "11,237",
+      null,
+      "",
+      "13,109",
+      null
+    ],
+    [
+      "Accumulated other comprehensive income",
+      "28",
+      null,
+      "",
+      "27",
+      null
+    ],
+    [
+      "Retained earnings",
+      "68,038",
+      null,
+      "",
+      "29,817",
+      null
+    ],
+    [
+      "Total shareholders' equity",
+      "79,327",
+      null,
+      "",
+      "42,978",
+      null
+    ],
+    [
+      "Total liabilities and shareholders' equity",
+      "$",
+      "111,601",
+      "",
+      "$",
+      "65,728"
+    ]
+  ],
+  "bbox": [
+    19.538512358794343,
+    109.28959517045455,
+    591.7890695765399,
+    525.8876065340909
+  ]
+}

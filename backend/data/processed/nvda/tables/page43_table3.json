@@ -1,0 +1,43 @@
+{
+  "id": "page43_table3",
+  "page": 43,
+  "title": "Liquidity and Capital Resources",
+  "caption": "Our investment policy requires the purchase of highly-rated fixed income securities, the diversification of investment types and credit exposures, and certain maturity limits on our portfolio.",
+  "context": {
+    "preceding_paragraph": "The effective tax rate increased primarily due to higher pre-tax income and a prior year discrete benefit due to an audit resolution.",
+    "section_header": ""
+  },
+  "markdown": "|Net cash provided by operating activities|$|64,089|Col4|$|28,090|\n|---|---|---|---|---|---|\n|Net cash used in investing activities|$|(20,421)||$|(10,566)|\n|Net cash used in financing activities|$|(42,359)||$|(13,633)|\n\n",
+  "data": [
+    [
+      "Net cash provided by operating activities",
+      "$",
+      "64,089",
+      "",
+      "$",
+      "28,090"
+    ],
+    [
+      "Net cash used in investing activities",
+      "$",
+      "(20,421)",
+      "",
+      "$",
+      "(10,566)"
+    ],
+    [
+      "Net cash used in financing activities",
+      "$",
+      "(42,359)",
+      "",
+      "$",
+      "(13,633)"
+    ]
+  ],
+  "bbox": [
+    18.224998474121094,
+    552.150390625,
+    592.7624384562174,
+    584.55078125
+  ]
+}
