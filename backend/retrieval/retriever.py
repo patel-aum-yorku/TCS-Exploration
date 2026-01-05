@@ -308,8 +308,8 @@ if __name__ == "__main__":
     # Example queries
     queries = [
         "What is the revenue breakdown by segments?",
-        "Show me the operating income data",
-        "What are the key financial metrics?"
+       # "Show me the operating income data",
+       # "What are the key financial metrics?"
     ]
     
     for query in queries:
