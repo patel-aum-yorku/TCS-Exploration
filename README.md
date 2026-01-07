@@ -238,3 +238,5 @@ python ingest_hybrid.py
 ---
 
 **Built with AWS Strands Agents, FastMCP, and Amazon Bedrock**
+
+** for mac write this cmd: export KMP_DUPLICATE_LIB_OK=TRUE
