@@ -18,3 +18,12 @@ numpy
 # PostgreSQL
 psycopg2-binary 
 pgvector
+yfinance
+duckduckgo-search
+langchain-community
+ddgs
+langchain-google-genai 
+google-generativeai
+fastmcp
+uvicorn
+httpx
