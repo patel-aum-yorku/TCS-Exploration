@@ -4,6 +4,7 @@ langchain-google-genai
 langchain-community
 langgraph
 langchain-text-splitters
+
 # PDF Parsing
 pymupdf4llm
 pymupdf
@@ -12,18 +13,31 @@ pymupdf
 python-dotenv
 pydantic
 
+# AWS & Cloud
 boto3 
 langchain-aws
+
+# Data & ML
 numpy
-# PostgreSQL
+
+# PostgreSQL & Vector DB
 psycopg2-binary 
 pgvector
+
+# Financial Data
 yfinance
 duckduckgo-search
-langchain-community
-ddgs
-langchain-google-genai 
-google-generativeai
-fastmcp
+
+# MCP (Model Context Protocol)
+fastmcp>=0.2.0
 uvicorn
-httpx
+httpx>=0.27.0
+
+# Frontend UI
+streamlit>=1.30.0
+plotly  # For future visualizations
+
+# Additional
+ddgs
+google-generativeai
+tqdm  # Progress bars for ingestion

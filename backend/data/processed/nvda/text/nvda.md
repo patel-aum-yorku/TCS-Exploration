@@ -93,7 +93,7 @@ end of the fiscal year covered by this Annual Report on Form 10-K are incorporat
 
 
 
-![](backend/data/processed/nvda/images/nvda.pdf-0-0.png)
+![](data/processed/nvda/images/nvda.pdf-0-0.png)
 Table of Contents
 
 
@@ -2547,7 +2547,7 @@ Nasdaq 100 $ 100.00 $ 142.64 $ 160.62 $ 136.37 $ 196.94 $ 248.12
 
 
 
-![](backend/data/processed/nvda/images/nvda.pdf-34-0.png)
+![](data/processed/nvda/images/nvda.pdf-34-0.png)
 Table of Contents
 
 
@@ -8429,7 +8429,7 @@ limited to the NYSE, Nasdaq Global Select Market, the Nasdaq Global Market, the 
 trading.
 
 
-![](backend/data/processed/nvda/images/nvda.pdf-122-0.png)
+![](data/processed/nvda/images/nvda.pdf-122-0.png)
 # **INSIDER TRADING POLICY**
 
 This Policy applies to NVIDIA employees, board members, contractors and consultants. If you use a third party to trade on your behalf, you are responsible for
@@ -8521,7 +8521,7 @@ Last Updated: 20 FEB 2025; Effective: 22 SEP 2021
 Page 1 of 2
 
 
-![](backend/data/processed/nvda/images/nvda.pdf-123-0.png)
+![](data/processed/nvda/images/nvda.pdf-123-0.png)
 # **INSIDER TRADING POLICY**
 
 

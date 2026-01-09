@@ -19,7 +19,7 @@ DB_PARAMS = {
 }
 
 class DataLoader:
-    def __init__(self, processed_dir: str = "backend/data/processed"):
+    def __init__(self, processed_dir: str = "data/processed"):
         self.processed_dir = Path(processed_dir)
         
         # Initialize Bedrock Embeddings (Titan v2)

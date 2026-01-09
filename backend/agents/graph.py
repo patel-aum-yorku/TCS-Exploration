@@ -5,22 +5,26 @@ from langchain_aws import ChatBedrock
 from langchain_core.messages import SystemMessage, HumanMessage
 from dotenv import load_dotenv
 import os
-
-from backend.agents.calculator import mcp_calculator
 import re
 import json
-from backend.agents.state import AgentState
-from backend.agents.tools import (
+from agents.mcp_client import MCPClient
+
+# Set environment variables BEFORE any other imports
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["PYTHONUNBUFFERED"] = "1"
+
+from agents.state import AgentState
+from agents.tools import (
     retrieve_financial_docs, 
     get_stock_price, 
     search_financial_news
-    
 )
+
 
 load_dotenv()
 
 # Initialize LLMs based on specifications
-# Manager and RAG: Gemini 2.0 Flash
+# Manager and RAG: Gemini 2.5 Flash
 manager_llm = ChatGoogleGenerativeAI(
     model="models/gemini-2.5-flash",
     temperature=0,
@@ -42,7 +46,7 @@ stock_llm = ChatBedrock(
 
 calc_llm = ChatBedrock(
     model_id="amazon.nova-lite-v1:0",
-    region_name="us-east-1",
+    region_name="us-east-1", 
     model_kwargs={"temperature": 0}
 )
 
@@ -83,14 +87,16 @@ USER QUERY: {query}
 AGENT STATUS:
 - RAG Agent (10-K documents): {'✅ COMPLETED' if agents_completed['rag'] else '❌ NOT CALLED'}
 - Stock Agent (market data): {'✅ COMPLETED' if agents_completed['stock'] else '❌ NOT CALLED'}
-- Calc Agent (calculations): {'✅ COMPLETED' if agents_completed['calc'] else '❌ NOT CALLED'}
+- Calc Agent (financial ratios): {'✅ COMPLETED' if agents_completed['calc'] else '❌ NOT CALLED'}
 
 ROUTING RULES:
 1. If query mentions "10-K", "financial statements", "revenue breakdown", "business segments" → call RAG (if not done)
 2. If query mentions "stock price", "current price", "market data", "news" → call Stock (if not done)
-3. If query mentions "calculate", "growth rate", "ratios", "margin analysis" → call Calc (if not done)
-4. If at least ONE agent has returned data, you can proceed to 'report'
-5. NEVER call an agent that's already completed
+3. If query mentions "calculate", "ratio", "liquidity", "leverage", "debt-to-equity", "current ratio" → call Calc (if not done)
+4. If query asks for "comprehensive analysis" or "complete picture" → ensure all 3 agents are called
+5. Calc agent REQUIRES rag_data to extract financial values from, so call RAG before Calc
+6. If at least TWO agents have returned data, you can proceed to 'report'
+7. NEVER call an agent that's already completed
 
 Respond with ONLY ONE WORD: rag, stock, calc, or report"""
 
@@ -104,6 +110,11 @@ Respond with ONLY ONE WORD: rag, stock, calc, or report"""
         next_step = "report"
     elif next_step == "calc" and agents_completed["calc"]:
         next_step = "report"
+    
+    # Prevent calc from being called before RAG (it needs financial data)
+    if next_step == "calc" and not agents_completed["rag"]:
+        print("⚠️ Manager: Calc requires RAG data first, routing to RAG")
+        next_step = "rag"
     
     print(f"🎯 Manager Decision: Routing to '{next_step}'")
     return {"next_step": next_step}
@@ -126,9 +137,10 @@ def rag_node(state: AgentState):
 USER QUERY: {query}
 
 TASK:
-Generate 2-3 distinct search queries that will retrieve the most relevant financial information from 10-K documents and related filings.:
+Generate 2-3 distinct search queries that will retrieve the most relevant financial information from 10-K documents and related filings:
 1. Remove conversational elements
 2. Each query should target a different aspect of the information need
+3. Focus on balance sheet items if the query involves calculations (current assets, liabilities, debt, equity, etc.)
 
 Now generate queries for: "{query}"
 
@@ -152,13 +164,12 @@ QUERY_3: [third focused query]"""
     if not search_queries:
         search_queries = [query]
     
-    print(f"🔍 RAG Agent: Generated {len(search_queries)} search queries")
+    print(f"📝 RAG Agent: Generated {len(search_queries)} search queries")
     for i, sq in enumerate(search_queries, 1):
         print(f"   Query {i}: '{sq}'")
     
     # Step 2: Execute ALL searches and collect results
     all_results = []
-    seen_doc_ids = set()  # Deduplicate across queries
     
     for i, search_query in enumerate(search_queries[:3], 1):  # Limit to 3 queries
         print(f"\n🔎 RAG Agent: Executing search {i}/{len(search_queries[:3])}")
@@ -187,7 +198,7 @@ QUERY_3: [third focused query]"""
 Provide a structured summary that:
 1. Groups similar information together
 2. Removes redundant content
-3. Preserves all unique financial data and metrics
+3. Preserves all unique financial data and metrics (especially balance sheet items)
 4. Maintains source attribution"""
             
             synthesis_response = rag_llm.invoke([HumanMessage(content=synthesis_prompt)])
@@ -249,153 +260,111 @@ Respond with ONLY the ticker symbol (e.g., NVDA)"""
     return {"stock_data": combined_info}
 
 # ---------------------------------------------------------
-# 4. MCP CALCULATION AGENT (USING MCP PROTOCOL)
+# 4. MCP CALCULATION AGENT (HTTP Transport)
 # ---------------------------------------------------------
 async def calc_node(state: AgentState):
-    """Performs financial calculations using FastMCP server"""
+    """
+    Calculation agent that uses MCP server for financial ratio calculations.
+    Requires RAG data to extract financial values.
+    """
     query = state["query"]
     rag_data = state.get("rag_data", "")
-    stock_data = state.get("stock_data", {})
     
-    print("\n🧮 MCP Calc Agent: Analyzing data and performing calculations...")
+    if not rag_data:
+        print("⚠️ Calc Agent: No RAG data available, cannot perform calculations")
+        return {"calc_data": "Error: RAG data required for calculations"}
     
-    # Step 1: Use LLM to extract financial data
-    calc_llm = ChatBedrock(
-        model_id="amazon.nova-lite-v1:0",
-        region_name="us-east-1",
-        model_kwargs={"temperature": 0}
-    )
+    print("\n🧮 Calc Agent: Analyzing query to determine required calculations...")
     
-    analysis_prompt = f"""You are a financial data extraction specialist. Extract ALL numerical financial data from the available sources.
+    # Use LLM to determine which calculations are needed
+    calc_prompt = f"""Analyze this financial query and determine which financial ratios to calculate.
 
 USER QUERY: {query}
 
-AVAILABLE DATA:
-RAG Documents: {str(rag_data)[:1500]}...
-Stock Data: {str(stock_data)[:500]}...
+Available calculations:
+1. Liquidity Ratios (current ratio, quick ratio) - measure short-term financial health
+2. Leverage Ratios (debt-to-equity, debt ratio) - measure financial leverage and risk
+3. All Ratios - comprehensive financial health assessment
 
-TASK: Extract financial metrics and organize them for calculation. Look for:
-- Revenue (current and previous periods)
-- Income figures (gross profit, operating income, net income)
-- Balance sheet items (assets, liabilities, equity, cash, inventory)
-- Debt and interest figures
-
-Respond in JSON format:
-{{
-    "revenue": <number or 0>,
-    "previous_revenue": <number or 0>,
-    "gross_profit": <number or 0>,
-    "operating_income": <number or 0>,
-    "net_income": <number or 0>,
-    "total_assets": <number or 0>,
-    "shareholders_equity": <number or 0>,
-    "current_assets": <number or 0>,
-    "current_liabilities": <number or 0>,
-    "cash_and_equivalents": <number or 0>,
-    "inventory": <number or 0>,
-    "total_debt": <number or 0>,
-    "total_liabilities": <number or 0>,
-    "ebit": <number or 0>,
-    "interest_expense": <number or 0>,
-    "cost_of_goods_sold": <number or 0>
-}}
-
-IMPORTANT: 
-- Only include numbers you actually find in the data
-- Set to 0 if not found
-- Do not make up numbers
-- Use actual values, not placeholders"""
-
-    try:
-        analysis_response = calc_llm.invoke([HumanMessage(content=analysis_prompt)])
-        analysis_text = analysis_response.content.strip()
-        
-        # Extract JSON
-        json_match = re.search(r'```(?:json)?\n?(.*?)\n?```', analysis_text, re.DOTALL)
-        if json_match:
-            extracted_data = json.loads(json_match.group(1))
-        else:
-            extracted_data = json.loads(analysis_text)
-        
-        print(f"📊 MCP Calc Agent: Extracted {len([v for v in extracted_data.values() if v > 0])} non-zero metrics")
-        
-        # Step 2: Connect to MCP and perform calculations
-        calculation_results = {
-            "extracted_data": extracted_data,
-            "calculations": {}
-        }
-        
-        # Growth Rate
-        if extracted_data.get("revenue", 0) > 0 and extracted_data.get("previous_revenue", 0) > 0:
-            growth_result = await mcp_calculator.calculate_growth_rate(
-                current_value=extracted_data["revenue"],
-                previous_value=extracted_data["previous_revenue"]
-            )
-            calculation_results["calculations"]["revenue_growth"] = growth_result
-            print(f"   ✓ Revenue growth: {growth_result.get('growth_rate_pct', 'N/A')}%")
-        
-        # Profitability Ratios
-        if extracted_data.get("revenue", 0) > 0:
-            prof_result = await mcp_calculator.calculate_profitability_ratios(
-                revenue=extracted_data.get("revenue", 0),
-                gross_profit=extracted_data.get("gross_profit", 0),
-                operating_income=extracted_data.get("operating_income", 0),
-                net_income=extracted_data.get("net_income", 0),
-                shareholders_equity=extracted_data.get("shareholders_equity", 0),
-                total_assets=extracted_data.get("total_assets", 0),
-                cost_of_goods_sold=extracted_data.get("cost_of_goods_sold", 0)
-            )
-            if prof_result and not prof_result.get("error"):
-                calculation_results["calculations"]["profitability_ratios"] = prof_result
-                print(f"   ✓ Profitability ratios: {list(prof_result.keys())}")
-        
-        # Liquidity Ratios
-        if extracted_data.get("current_liabilities", 0) > 0:
-            liq_result = await mcp_calculator.calculate_liquidity_ratios(
-                current_assets=extracted_data.get("current_assets", 0),
-                current_liabilities=extracted_data.get("current_liabilities", 0),
-                cash_and_equivalents=extracted_data.get("cash_and_equivalents", 0),
-                inventory=extracted_data.get("inventory", 0)
-            )
-            if liq_result and not liq_result.get("error"):
-                calculation_results["calculations"]["liquidity_ratios"] = liq_result
-                print(f"   ✓ Liquidity ratios: {list(liq_result.keys())}")
-        
-        # Leverage Ratios
-        if extracted_data.get("shareholders_equity", 0) > 0 or extracted_data.get("total_assets", 0) > 0:
-            lev_result = await mcp_calculator.calculate_leverage_ratios(
-                total_debt=extracted_data.get("total_debt", 0),
-                total_liabilities=extracted_data.get("total_liabilities", 0),
-                shareholders_equity=extracted_data.get("shareholders_equity", 0),
-                total_assets=extracted_data.get("total_assets", 0),
-                ebit=extracted_data.get("ebit", 0),
-                interest_expense=extracted_data.get("interest_expense", 0)
-            )
-            if lev_result and not lev_result.get("error"):
-                calculation_results["calculations"]["leverage_ratios"] = lev_result
-                print(f"   ✓ Leverage ratios: {list(lev_result.keys())}")
-        
-        print("✅ MCP Calc Agent: All calculations completed via MCP")
-        
-        return {"calc_data": json.dumps(calculation_results, indent=2)}
-        
-    except Exception as e:
-        print(f"⚠️ MCP Calc Agent: Error: {e}")
-        import traceback
-        traceback.print_exc()
-        return {"calc_data": f"Calculation error: {e}"}
-
-# Sync wrapper for LangGraph
-def calc_node_sync(state: AgentState):
-    """Sync wrapper for async calc_node"""
-    import asyncio
-    try:
-        loop = asyncio.get_event_loop()
-    except RuntimeError:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
+Respond with ONE of: "liquidity", "leverage", or "all"
+"""
     
-    return loop.run_until_complete(calc_node(state))
+    response = calc_llm.invoke([HumanMessage(content=calc_prompt)])
+    calc_type = response.content.strip().lower()
+    
+    print(f"🎯 Calc Agent: Determined calculation type: {calc_type}")
+    
+    # Initialize MCP client
+    mcp_client = MCPClient()
+    
+    try:
+        print(f"📡 Calc Agent: Connecting to MCP server and requesting {calc_type} calculations...")
+        
+        # Call appropriate MCP tool based on query analysis
+        if "liquidity" in calc_type:
+            result = await mcp_client.calculate_liquidity_ratios(rag_data)
+        elif "leverage" in calc_type:
+            result = await mcp_client.calculate_leverage_ratios(rag_data)
+        else:  # default to all ratios
+            result = await mcp_client.calculate_all_ratios(rag_data)
+        
+        # Parse and format the result
+        try:
+            result_data = json.loads(result)
+            
+            # Format the output for the reporter
+            formatted_output = "## Financial Ratio Analysis\n\n"
+            formatted_output += "### Extracted Financial Values\n"
+            
+            if "extracted_values" in result_data:
+                for key, value in result_data["extracted_values"].items():
+                    if value is not None:
+                        formatted_output += f"- {key.replace('_', ' ').title()}: ${value:,.2f} million\n"
+            
+            # Format liquidity ratios
+            if "liquidity_ratios" in result_data:
+                formatted_output += "\n### Liquidity Ratios\n"
+                for ratio in result_data["liquidity_ratios"]:
+                    if "error" not in ratio:
+                        formatted_output += f"\n**{ratio['ratio_name']}**: {ratio['value']}\n"
+                        formatted_output += f"- Formula: {ratio['formula']}\n"
+                        formatted_output += f"- Interpretation: {ratio['interpretation']}\n"
+            
+            # Format leverage ratios
+            if "leverage_ratios" in result_data:
+                formatted_output += "\n### Leverage Ratios\n"
+                for ratio in result_data["leverage_ratios"]:
+                    if "error" not in ratio:
+                        formatted_output += f"\n**{ratio['ratio_name']}**: {ratio['value']}\n"
+                        formatted_output += f"- Formula: {ratio['formula']}\n"
+                        formatted_output += f"- Interpretation: {ratio['interpretation']}\n"
+            
+            # Format single ratios list (from liquidity/leverage only calls)
+            if "ratios" in result_data:
+                formatted_output += "\n### Calculated Ratios\n"
+                for ratio in result_data["ratios"]:
+                    if "error" in ratio:
+                        formatted_output += f"\n**{ratio['ratio_name']}**: {ratio['error']}\n"
+                    else:
+                        formatted_output += f"\n**{ratio['ratio_name']}**: {ratio['value']}\n"
+                        formatted_output += f"- Formula: {ratio['formula']}\n"
+                        formatted_output += f"- Interpretation: {ratio['interpretation']}\n"
+            
+            print(f"✅ Calc Agent: Successfully calculated {calc_type} ratios")
+            
+            return {"calc_data": formatted_output}
+            
+        except json.JSONDecodeError:
+            # If result is already formatted string
+            return {"calc_data": result}
+    
+    except Exception as e:
+        error_msg = f"Error during MCP calculation: {str(e)}"
+        print(f"⚠️ Calc Agent: {error_msg}")
+        return {"calc_data": error_msg}
+    
+    finally:
+        await mcp_client.close()
 
 # ---------------------------------------------------------
 # 5. REPORTER NODE - FINAL SYNTHESIS
@@ -419,7 +388,7 @@ USER QUERY: {query}
 --- 📈 MARKET DATA & NEWS ---
 {stock_context}
 
---- 🧮 FINANCIAL ANALYSIS & CALCULATIONS ---
+--- 🧮 FINANCIAL RATIOS & CALCULATIONS ---
 {calc_context}
 
 INSTRUCTIONS:
@@ -432,10 +401,14 @@ Create a professional, well-structured financial analysis report that:
    - Provide specific numbers, percentages, and metrics
    - Compare trends over time when data is available
    - Contextualize findings (industry benchmarks, historical context)
-4. **Data Quality & Limitations**: 
+4. **Financial Health Assessment** (if calc data available):
+   - Interpret liquidity ratios (current ratio, quick ratio)
+   - Interpret leverage ratios (debt-to-equity, debt ratio)
+   - Overall financial position assessment
+5. **Data Quality & Limitations**: 
    - Note any missing information
    - Highlight data recency and reliability
-5. **Investment Implications** (if relevant):
+6. **Investment Implications** (if relevant):
    - What this means for investors
    - Risk factors to consider
 
@@ -444,7 +417,8 @@ FORMAT REQUIREMENTS:
 - Include relevant numbers with context
 - Be objective and data-driven
 - If data is limited, be explicit about it
-- Do not fabricate information"""
+- Do not fabricate information
+- When presenting ratios, explain what they mean in plain language"""
 
     response = manager_llm.invoke([HumanMessage(content=report_prompt)])
     
@@ -460,7 +434,7 @@ workflow = StateGraph(AgentState)
 workflow.add_node("manager", manager_node)
 workflow.add_node("rag_agent", rag_node) 
 workflow.add_node("stock_agent", stock_node)
-workflow.add_node("calc_agent", calc_node_sync)
+workflow.add_node("calc_agent", calc_node)
 workflow.add_node("reporter", reporter_node)
 
 # Set entry point
@@ -502,9 +476,9 @@ if __name__ == "__main__":
     async def main():
         # Test queries
         test_queries = [
-            "Analyze Nvidia's revenue growth from their latest 10-K and current stock performance",
-            "What are the key business segments for NVDA and their contribution to revenue?",
-            "Calculate the profit margins and ROE for Nvidia based on latest 10-K data"
+            
+            "Calculate the liquidity and leverage ratios for NVDA based on their 10-K"
+            
         ]
         
         for query in test_queries[:1]:  # Test with first query
@@ -522,7 +496,7 @@ if __name__ == "__main__":
             }
             
             # Run with recursion limit safety
-            config = {"recursion_limit": 15}
+            config = {"recursion_limit": 20}
             
             try:
                 result = None

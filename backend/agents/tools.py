@@ -1,7 +1,7 @@
 import yfinance as yf
 from langchain_core.tools import tool
 from langchain_community.tools import DuckDuckGoSearchRun
-from backend.retrieval.retriever import MultiModalRetriever
+from retrieval.retriever import MultiModalRetriever
 
 # Initialize tools
 retriever_instance = MultiModalRetriever()

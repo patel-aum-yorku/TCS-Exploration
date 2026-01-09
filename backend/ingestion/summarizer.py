@@ -17,7 +17,7 @@ from tqdm.asyncio import tqdm_asyncio  # For progress bars
 load_dotenv()
 
 class MultiModalSummarizer:
-    def __init__(self, processed_dir: str = "backend/data/processed"):
+    def __init__(self, processed_dir: str = "data/processed"):
         self.processed_dir = Path(processed_dir)
         
         # --- RATE LIMIT CONTROL ---
@@ -210,7 +210,7 @@ class MultiModalSummarizer:
 
 if __name__ == "__main__":
     summarizer = MultiModalSummarizer()
-    processed_root = Path("backend/data/processed")
+    processed_root = Path("data/processed")
     doc_folders = [d.name for d in processed_root.iterdir() if d.is_dir()]
     
     async def main():

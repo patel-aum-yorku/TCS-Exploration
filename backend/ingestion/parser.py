@@ -12,7 +12,7 @@ class PDFParser:
     separate, structured directories per document.
     """
     
-    def __init__(self, base_dir: str = "backend/data"):
+    def __init__(self, base_dir: str = "data"):
         self.base_dir = pathlib.Path(base_dir)
         self.uploads_dir = self.base_dir / "uploads"
         self.processed_dir = self.base_dir / "processed"
